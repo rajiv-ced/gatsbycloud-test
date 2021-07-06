@@ -5,9 +5,14 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: "gatsby-source-graphql",
       options: {
-        url: "localhost/getsby_test",
+        // Arbitrary name for the remote schema Query type
+        typeName: "SWAPI",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "swapi",
+        // Url to query from
+        url: "http://localhost/wordpress/graphql",
       },
     },
     "gatsby-plugin-styled-components",
